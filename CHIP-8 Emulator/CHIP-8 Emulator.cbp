@@ -14,6 +14,23 @@
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
+				<Linker>
+					<Add library="sfml-graphics-s-d" />
+					<Add library="sfml-audio-s-d" />
+					<Add library="sfml-window-s-d" />
+					<Add library="sfml-system-s-d" />
+					<Add library="opengl32" />
+					<Add library="freetype" />
+					<Add library="jpeg" />
+					<Add library="winmm" />
+					<Add library="gdi32" />
+					<Add library="openal32" />
+					<Add library="flac" />
+					<Add library="vorbisenc" />
+					<Add library="vorbisfile" />
+					<Add library="vorbis" />
+					<Add library="ogg" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/CHIP-8 Emulator" prefix_auto="1" extension_auto="1" />
@@ -25,12 +42,34 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add library="sfml-graphics-s" />
+					<Add library="sfml-audio-s" />
+					<Add library="sfml-window-s" />
+					<Add library="sfml-system-s" />
+					<Add library="opengl32" />
+					<Add library="freetype" />
+					<Add library="jpeg" />
+					<Add library="winmm" />
+					<Add library="gdi32" />
+					<Add library="openal32" />
+					<Add library="flac" />
+					<Add library="vorbis" />
+					<Add library="vorbisenc" />
+					<Add library="vorbisfile" />
+					<Add library="ogg" />
 				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add option="-DSFML_STATIC" />
+			<Add directory="../../../Programming/C++/SFML/SFML-2.3.2/include" />
 		</Compiler>
+		<Linker>
+			<Add directory="../../../Programming/C++/SFML/SFML-2.3.2/lib" />
+		</Linker>
+		<Unit filename="App.hpp" />
+		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
